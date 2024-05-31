@@ -1,0 +1,66 @@
+    .encabezado {
+        background-color: rgb(240, 136, 136);
+        height: 40px;
+    }
+
+    .encabezado2 {
+        background-color: rgb(144, 230, 211);
+        height: 40px;
+    }
+
+    .cabecera {
+        height: 40px;
+    }
+
+    .grilla {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .grilla th,
+    .grilla td {
+        border: 1px solid black;
+        padding: 4px;
+        text-align: center;
+    }
+
+    .negativo {
+        background-color: red;
+    }
+
+    .positivo {
+        background-color: green;
+    }
+
+    .es {
+        background-color: rgb(255, 238, 0);
+    }
+
+    .noes {
+        background-color: rgb(214, 214, 214);
+    }
+
+    .contenedor {
+        margin: 20 px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .contenedor {
+        width: 80%;
+        /* Ancho del contenedor */
+        max-width: 1200px;
+        /* Ancho máximo para pantallas grandes */
+        margin: 0 auto;
+        /* Centra el contenedor horizontalmente */
+        padding: 20px;
+        /* Espaciado interno del contenedor */
+        background-color: #f9f9f9;
+        /* Fondo del contenedor */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Sombra para efecto visual */
+    }
