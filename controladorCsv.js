@@ -29,17 +29,42 @@ app.controller('miControlador', ['$scope', function ($scope) {
                 numeros.length = numeros.length - 1;
                 console.log("Datos en fila: ", numeros);
                 $scope.$apply(function () {
-                    // $scope.matriz = [];
-                    // for (let i = 0; i < numeros.length; i += 15) {
-                    //     $scope.matriz.push(numeros.slice(i, i + 15));
-                    // };
-                    //     // cuadro de pruebas
-                    let dimensionAumentada = numeros.map(value => [value, 0]);
-                    $scope.matriz2 = [];
-                    for (let i = 0; i < dimensionAumentada.length; i += 15) {
-                        $scope.matriz2.push(dimensionAumentada.slice(i, i + 15));
+
+                    let dbCSV = numeros.map(value => [value, 'X']);// agrega la dimensión para anotar el indice
+                    console.log(dbCSV)
+                    for (let inicio1 = 0; inicio1 <= 20; inicio1++) {//recorre cada elemento del array
+                        var numeroBase = dbCSV[inicio1][0];//guarda el primer número
+
+                        for (let inicio11 = inicio1; inicio11 < dbCSV.length; inicio11++) {//recorre cada elemento del array para comparar
+                            if (dbCSV[inicio11][1] == 'X') {// si el elemento dentro del array no ha sido comparado, entonces realiza la comparación
+                                var numeroCopia = dbCSV[inicio11][0]; // guarda el numero que se pretende comparar
+                                dbCSV[inicio11][1] = inicio11;//le asigna un numero a la 2da dimensión
+                                if (numeroBase == numeroCopia) {
+                                    dbCSV[inicio11][1] = inicio1;
+                                } else {
+                                    dbCSV[inicio11][1] = 'X';
+                                }
+                            } else {
+                                console.log("Número ya revisado: ", dbCSV[inicio11][0])
+                            }
+                        }
+                        console.log(dbCSV);
+                    };
+
+                    $scope.matriz2 = [];// Muestra la matriz en una tabla, por el ordende las columnas 
+                    for (let i = 0; i < 20; i++) {
+                        $scope.matriz2[i] = [];
                     }
-                    $scope.primerNumero = numeros[0];
+                    for (let i = 0; i < dbCSV.length; i++) {
+                        let row = i % 20;
+                        let col = Math.floor(i / 20);
+                        $scope.matriz2[row][col] = dbCSV[i];
+                    }
+                    // $scope.matriz2 = [];// Muestra la matriz en una tabla, por el orden de las filas
+                    // for (let i = 0; i < dbCSV.length; i += 15) {
+                    //     $scope.matriz2.push(dbCSV.slice(i, i + 15));
+                    // }
+
                 });
             }).catch(error => {
                 console.error("ERROR AL LEER EL ARCHIVO: ", error);
@@ -99,19 +124,78 @@ app.controller('miControlador', ['$scope', function ($scope) {
         });
     }
     $scope.getClass = function (numero) {
-        // if (numero < 100) {
-        //     return 'negativo';
-        // } else if (numero > 100) {
-        //     return 'positivo';
+        // var primerNumero = $scope.primerNumero;
+        // if (numero == primerNumero) {
+        //     return 'es';
         // } else {
-        //     return 'cero';
+        //     return 'noes';
         // }
-        var primerNumero = $scope.primerNumero;
-        if (numero == primerNumero) {
-            return 'es';
-        } else {
-            return 'noes';
+        var numeroColor = 'ninguno';
+        switch (numero) {
+            case 0:
+                numeroColor = 'cero';
+                break;
+            case 1:
+                numeroColor = 'uno';
+                break;
+            case 2:
+                numeroColor = 'dos';
+                break;
+            case 3:
+                numeroColor = 'tres';
+                break;
+            case 4:
+                numeroColor = 'cuatro';
+                break;
+            case 5:
+                numeroColor = 'cinco';
+                break;
+            case 6:
+                numeroColor = 'seis';
+                break;
+            case 7:
+                numeroColor = 'siete';
+                break;
+            case 8:
+                numeroColor = 'ocho';
+                break;
+            case 9:
+                numeroColor = 'nueve';
+                break;
+            case 10:
+                numeroColor = 'diez';
+                break;
+            // case 11:
+            //     numeroColor = 'once';
+            //     break;
+            // case 12:
+            //     numeroColor = 'doce';
+            //     break;
+            // case 13:
+            //     numeroColor = 'trece';
+            //     break;
+            // case 14:
+            //     numeroColor = 'catorce';
+            //     break;
+            // case 15:
+            //     numeroColor = 'quince';
+            //     break;
+            // case 16:
+            //     numeroColor = 'dieciseis';
+            //     break;
+            // case 17:
+            //     numeroColor = 'diecisiete';
+            //     break;
+            // case 18:
+            //     numeroColor = 'dieciocho';
+            //     break;
+            // case 19:
+            //     numeroColor = 'diecinueve';
+            //     break;
+            default:
+                numeroColor = 'otro';
         }
+        return numeroColor;
     };
 }])
     .controller('testController', function ($scope) {

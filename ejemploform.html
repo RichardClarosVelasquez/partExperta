@@ -56,7 +56,7 @@
             <br>
             <table class="grilla">
                 <tr ng-repeat="fila in matriz2 track by $index">
-                    <td ng-repeat="elemento in fila track by $index" ng-class="getClass(elemento[0])">{{ elemento[0] }}
+                    <td ng-repeat="elemento in fila track by $index" ng-class="getClass(elemento[1])">{{ elemento[0] }}
                     </td>
                 </tr>
             </table>

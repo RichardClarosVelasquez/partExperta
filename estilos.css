@@ -24,21 +24,53 @@
         text-align: center;
     }
 
-    .negativo {
+    .cero {
+        background-color: orange;
+    }
+
+    .uno {
         background-color: red;
     }
 
-    .positivo {
+    .dos {
         background-color: green;
     }
 
-    .es {
-        background-color: rgb(255, 238, 0);
+    .tres {
+        background-color: yellow;
     }
 
-    .noes {
-        background-color: rgb(214, 214, 214);
+    .cuatro {
+        background-color: blue;
     }
+
+    .cinco {
+        background-color: violet;
+    }
+
+    .seis {
+        background-color: pink;
+    }
+
+    .siete {
+        background-color: brown;
+    }
+
+    .ocho {
+        background-color: skyblue;
+    }
+
+    .nueve {
+        background-color: orangered;
+    }
+    
+    .diez {
+        background-color: greenyellow;
+    }
+
+    .otro {
+        background-color: grey;
+    }    
 
     .contenedor {
         margin: 20 px;
