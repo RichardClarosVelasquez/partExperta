@@ -18,7 +18,7 @@ const dbCSV = [
 // Extraer los dos primeros elementos del array original
 const primerosElementos = dbCSV.slice(0, 2);// 0 es inclusivo y 2 es exclusivo
 var posicionDeCopias = [];
-var numeroColor = 0;
+var numeroColor = -1;
 for (let contador = 0; contador < dbCSV.length - 1; contador++) {
     //var contador = 0;
     // dbCSV[contador][1] = contador;

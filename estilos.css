@@ -25,52 +25,94 @@
     }
 
     .cero {
-        background-color: orange;
+        background-color: orangered;
     }
 
     .uno {
-        background-color: red;
+        background-color: orange;
     }
 
     .dos {
-        background-color: green;
-    }
-
-    .tres {
         background-color: yellow;
     }
 
+    .tres {
+        background-color: lightgreen;
+    }
+
     .cuatro {
-        background-color: blue;
+        background-color: forestgreen;
     }
 
     .cinco {
-        background-color: violet;
+        background-color: lightskyblue;
     }
 
     .seis {
-        background-color: pink;
+        background-color: steelblue;
     }
 
     .siete {
-        background-color: brown;
+        background-color: purple;
     }
 
     .ocho {
-        background-color: skyblue;
+        background-color: deeppink;
     }
 
     .nueve {
-        background-color: orangered;
+        background-color: brown;
     }
-    
+
     .diez {
-        background-color: greenyellow;
+        background-color: grey;
+    }
+
+    .once {
+        background-color: lightpink;
+    }
+
+    .doce {
+        background-color: hotpink;
+    }
+
+    .trece {
+        background-color: peachpuff;
+    }
+
+    .catorce {
+        background-color: mediumspringgreen;
+    }
+
+    .quince {
+        background-color: mediumvioletred;
+    }
+
+    .dieciseis {
+        background-color: lawngreen;
+    }
+
+    .diecisiete {
+        background-color: darkorange;
+    }
+
+    .dieciocho {
+        background-color: coral;
+    }
+
+    .diecinueve {
+        background-color: midnightblue;
+    }
+
+    .veinte {
+        background-color: cornflowerblue;
     }
 
     .otro {
         background-color: snow;
-    }    
+    }
+
+
 
     .contenedor {
         margin: 20 px;

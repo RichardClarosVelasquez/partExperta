@@ -29,7 +29,7 @@ app.controller('miControlador', ['$scope', function ($scope) {
                 numeros.length = numeros.length - 1;
                 console.log("Datos en fila: ", numeros);
                 $scope.$apply(function () {
-
+                    //SERIES DE UNO
                     // let dbCSV = numeros.map(value => [value, 'X']);// agrega la dimensión para anotar el indice
                     // for (let inicio1 = 0; inicio1 <= 20; inicio1++) {//recorre cada elemento del array
                     //     var numeroBase = dbCSV[inicio1][0];//guarda el primer número
@@ -48,9 +48,11 @@ app.controller('miControlador', ['$scope', function ($scope) {
                     //     }
                     //     console.log(dbCSV);
                     // };
+
+                    //SERIES DE DOS
                     let dbCSV = numeros.map(value => [value, 'X']);
                     var posicionDeCopias = [];
-                    var numeroColor = 0;
+                    var numeroColor = -1;
                     for (let contador = 0; contador < dbCSV.length - 1; contador++) {
                         //var contador = 0;
                         // dbCSV[contador][1] = contador;
@@ -191,33 +193,36 @@ app.controller('miControlador', ['$scope', function ($scope) {
             case 10:
                 numeroColor = 'diez';
                 break;
-            // case 11:
-            //     numeroColor = 'once';
-            //     break;
-            // case 12:
-            //     numeroColor = 'doce';
-            //     break;
-            // case 13:
-            //     numeroColor = 'trece';
-            //     break;
-            // case 14:
-            //     numeroColor = 'catorce';
-            //     break;
-            // case 15:
-            //     numeroColor = 'quince';
-            //     break;
-            // case 16:
-            //     numeroColor = 'dieciseis';
-            //     break;
-            // case 17:
-            //     numeroColor = 'diecisiete';
-            //     break;
-            // case 18:
-            //     numeroColor = 'dieciocho';
-            //     break;
-            // case 19:
-            //     numeroColor = 'diecinueve';
-            //     break;
+            case 11:
+                numeroColor = 'once';
+                break;
+            case 12:
+                numeroColor = 'doce';
+                break;
+            case 13:
+                numeroColor = 'trece';
+                break;
+            case 14:
+                numeroColor = 'catorce';
+                break;
+            case 15:
+                numeroColor = 'quince';
+                break;
+            case 16:
+                numeroColor = 'dieciseis';
+                break;
+            case 17:
+                numeroColor = 'diecisiete';
+                break;
+            case 18:
+                numeroColor = 'dieciocho';
+                break;
+            case 19:
+                numeroColor = 'diecinueve';
+                break;
+            case 20:
+                numeroColor = 'veinte';
+                break;
             default:
                 numeroColor = 'otro';
         }
