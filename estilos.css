@@ -25,59 +25,59 @@
     }
 
     .cero {
-        background-color: orangered;
+        background-color: red;
     }
 
     .uno {
-        background-color: orange;
+        background-color: orangered;
     }
 
     .dos {
-        background-color: yellow;
-    }
-
-    .tres {
-        background-color: lightgreen;
-    }
-
-    .cuatro {
-        background-color: forestgreen;
-    }
-
-    .cinco {
-        background-color: lightskyblue;
-    }
-
-    .seis {
-        background-color: steelblue;
-    }
-
-    .siete {
-        background-color: purple;
-    }
-
-    .ocho {
-        background-color: deeppink;
-    }
-
-    .nueve {
-        background-color: brown;
-    }
-
-    .diez {
-        background-color: grey;
-    }
-
-    .once {
-        background-color: lightpink;
-    }
-
-    .doce {
         background-color: hotpink;
     }
 
+    .tres {
+        background-color: coral;
+    }
+
+    .cuatro {
+        background-color: darkorange;
+    }
+
+    .cinco {
+        background-color: lightpink;
+    }
+
+    .seis {
+        background-color: lightpink;
+    }
+
+    .siete {
+        background-color: orange;
+    }
+
+    .ocho {
+        background-color: yellow;
+    }
+
+    .nueve {
+        background-color: moccasin;
+    }
+
+    .diez {
+        background-color: moccasin;
+    }
+
+    .once {
+        background-color: papayawhip;
+    }
+
+    .doce {
+        background-color: lawngreen;
+    }
+
     .trece {
-        background-color: peachpuff;
+        background-color: lightgreen;
     }
 
     .catorce {
@@ -85,19 +85,19 @@
     }
 
     .quince {
-        background-color: mediumvioletred;
+        background-color: forestgreen;
     }
 
     .dieciseis {
-        background-color: lawngreen;
+        background-color: steelblue;
     }
 
     .diecisiete {
-        background-color: darkorange;
+        background-color: lightskyblue;
     }
 
     .dieciocho {
-        background-color: coral;
+        background-color: cornflowerblue;
     }
 
     .diecinueve {
@@ -105,14 +105,36 @@
     }
 
     .veinte {
-        background-color: cornflowerblue;
+        background-color: navy;
+    }
+
+    .veintiuno {
+        background-color: deeppink;
+    }
+
+    .veintidos {
+        background-color: purple;
+    }
+
+    .veintitres {
+        background-color: mediumvioletred;
+    }
+
+    .veinticuatro {
+        background-color: brown;
+    }
+
+    .veinticinco {
+        background-color: peru;
+    }
+
+    .veintiseis {
+        background-color: grey;
     }
 
     .otro {
         background-color: snow;
     }
-
-
 
     .contenedor {
         margin: 20 px;

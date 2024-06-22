@@ -30,47 +30,19 @@ app.controller('miControlador', ['$scope', function ($scope) {
                 console.log("Datos en fila: ", numeros);
                 $scope.$apply(function () {
                     //SERIES DE UNO
-                    // let dbCSV = numeros.map(value => [value, 'X']);// agrega la dimensión para anotar el indice
-                    // for (let inicio1 = 0; inicio1 <= 20; inicio1++) {//recorre cada elemento del array
-                    //     var numeroBase = dbCSV[inicio1][0];//guarda el primer número
-                    //     for (let inicio11 = inicio1; inicio11 < dbCSV.length; inicio11++) {//recorre cada elemento del array para comparar
-                    //         if (dbCSV[inicio11][1] == 'X') {// si el elemento dentro del array no ha sido comparado, entonces realiza la comparación
-                    //             var numeroCopia = dbCSV[inicio11][0]; // guarda el numero que se pretende comparar
-                    //             dbCSV[inicio11][1] = inicio11;//le asigna un numero a la 2da dimensión
-                    //             if (numeroBase == numeroCopia) {
-                    //                 dbCSV[inicio11][1] = inicio1;
-                    //             } else {
-                    //                 dbCSV[inicio11][1] = 'X';
-                    //             }
-                    //         } else {
-                    //             console.log("Número ya revisado: ", dbCSV[inicio11][0])
-                    //         }
-                    //     }
-                    //     console.log(dbCSV);
-                    // };
-
-                    //SERIES DE DOS
                     let dbCSV = numeros.map(value => [value, 'X']);
                     var posicionDeCopias = [];
                     var numeroColor = -1;
                     for (let contador = 0; contador < dbCSV.length - 1; contador++) {
-                        //var contador = 0;
-                        // dbCSV[contador][1] = contador;
-                        // dbCSV[contador + 1][1] = contador;
                         var primero = dbCSV[contador][0];
-                        var segundo = dbCSV[contador + 1][0];
-                        for (let i = contador + 2; i < dbCSV.length - 1; i++) {
-                            if (dbCSV[i][0] == primero && dbCSV[i + 1][0] == segundo && dbCSV[i][1] == "X" && dbCSV[i + 1][1] == "X") {
-                                // dbCSV[i][1] = contador;
-                                // dbCSV[i + 1][1] = contador;
+                        for (let i = contador + 1; i < dbCSV.length - 1; i++) {
+                            if (dbCSV[i][0] == primero && dbCSV[i][1] == "X") {
                                 posicionDeCopias.push(i);
-                                posicionDeCopias.push(i + 1);
                             }
                         }
                         if (posicionDeCopias.length !== 0) {
                             posicionDeCopias.push(contador);
-                            posicionDeCopias.push(contador + 1);
-                            posicionDeCopias = posicionDeCopias.slice(-2).concat(posicionDeCopias.slice(0, -2));
+                            posicionDeCopias = posicionDeCopias.slice(-1).concat(posicionDeCopias.slice(0, -1));
                             numeroColor = numeroColor + 1;
                             console.log("COPIAS EN LAS POSICIONES: ", posicionDeCopias);
                         }
@@ -82,6 +54,35 @@ app.controller('miControlador', ['$scope', function ($scope) {
                         posicionDeCopias = [];
                     }
                     console.log("RESULTADO: ", dbCSV)
+
+                    //SERIES DE DOS
+                    // let dbCSV = numeros.map(value => [value, 'X']);
+                    // var posicionDeCopias = [];
+                    // var numeroColor = -1;
+                    // for (let contador = 0; contador < dbCSV.length - 1; contador++) {
+                    //     var primero = dbCSV[contador][0];
+                    //     var segundo = dbCSV[contador + 1][0];
+                    //     for (let i = contador + 2; i < dbCSV.length - 1; i++) {
+                    //         if (dbCSV[i][0] == primero && dbCSV[i + 1][0] == segundo && dbCSV[i][1] == "X" && dbCSV[i + 1][1] == "X") {
+                    //             posicionDeCopias.push(i);
+                    //             posicionDeCopias.push(i + 1);
+                    //         }
+                    //     }
+                    //     if (posicionDeCopias.length !== 0) {
+                    //         posicionDeCopias.push(contador);
+                    //         posicionDeCopias.push(contador + 1);
+                    //         posicionDeCopias = posicionDeCopias.slice(-2).concat(posicionDeCopias.slice(0, -2));
+                    //         numeroColor = numeroColor + 1;
+                    //         console.log("COPIAS EN LAS POSICIONES: ", posicionDeCopias);
+                    //     }
+                    //     posicionDeCopias.forEach(indice => {
+                    //         if (dbCSV[indice] && dbCSV[indice][1] === 'X') {
+                    //             dbCSV[indice][1] = numeroColor;
+                    //         }
+                    //     });
+                    //     posicionDeCopias = [];
+                    // }
+                    // console.log("RESULTADO: ", dbCSV)
 
                     $scope.matriz2 = [];// Muestra la matriz en una tabla, por el ordende las columnas 
                     for (let i = 0; i < 20; i++) {
