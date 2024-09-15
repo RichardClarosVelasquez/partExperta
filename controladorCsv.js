@@ -37,84 +37,84 @@ app
 							console.log("Datos en fila: ", numeros);
 							$scope.$apply(function () {
 								//SERIES DE UNO
-								// let dbCSV = numeros.map((value) => [value, "X"]);
-								// var posicionDeCopias = [];
-								// var posicionDePrimeraCopia = [];
-								// var contadorDos = [];
-								// var numeroColor = -1;
-								// for (
-								// 	let contador = 0;
-								// 	contador < dbCSV.length - 1;
-								// 	contador++
-								// ) {
-								// 	var primero = dbCSV[contador][0];
-								// 	for (let i = contador + 1; i < dbCSV.length - 1; i++) {
-								// 		if (dbCSV[i][0] == primero && dbCSV[i][1] == "X") {
-								// 			// COMO ES UN BUCLE EN LAS SIGUIENTES ITERACIONES NO SE COMPARA LAS COPIAS
-								// 			posicionDeCopias.push(i);
-								// 		}
-								// 	}
-								// 	if (posicionDeCopias.length !== 0) {
-								// 		// SE EJECUTA SI HUBO COPIAS
-								// 		posicionDeCopias.push(contador); // SE AGREGA EL MISMO NUMERO, EL DE LA POSICION DE LA COPIA
-								// 		console.log("DATOS REPETIDOS: ", posicionDeCopias);
-								// 		posicionDeCopias = posicionDeCopias.slice(-1).concat(posicionDeCopias.slice(0, -1));
-								// 		numeroColor = numeroColor + 1;
-								// 		console.log("COPIAS EN LAS POSICIONES: ", posicionDeCopias);
-								// 		posicionDeCopias.forEach(indice => {
-								// 			// console.log("INDICE: ", indice)
-								// 			if (dbCSV[indice] && dbCSV[indice][1] === 'X') {// EVITA SOBREESCRIBIR SOBRE LOS DATOS QUE YA EXISTEN
-								// 				dbCSV[indice][1] = numeroColor;
-								// 			}
-								// 		});
-								// 		//INICIO CAMBIOS
-								// 		if (contadorDos == 1 && posicionDePrimeraCopia.length == posicionDeCopias.length) {
-								// 		} else if (contadorDos == 0) {
-								// 			posicionDePrimeraCopia = posicionDeCopias;
-								// 		} else {
-
-								// 		}
-								// 		contadorDos = contadorDos + 1;
-								// 		// FIN CAMBIOS
-								// 	}
-								// 	// posicionDeCopias.forEach(indice => {
-								// 	// 	console.log("INDICE: ", indice)
-								// 	// 	if (dbCSV[indice] && dbCSV[indice][1] === 'X') {// EVITA SOBREESCRIBIR SOBRE LOS DATOS QUE YA EXISTEN
-								// 	// 		dbCSV[indice][1] = numeroColor;
-								// 	// 	}
-								// 	// });
-								// 	posicionDeCopias = [];
-								// }
-								// console.log("RESULTADO: ", dbCSV);
-
-								//SERIES DE DOS
-								let dbCSV = numeros.map(value => [value, 'X']);
+								let dbCSV = numeros.map((value) => [value, "X"]);
 								var posicionDeCopias = [];
+								var posicionDePrimeraCopia = [];
+								var contadorDos = 0;
 								var numeroColor = -1;
-								for (let contador = 0; contador < dbCSV.length - 1; contador++) {
+								for (
+									let contador = 0;
+									contador < dbCSV.length - 1;
+									contador++
+								) {
 									var primero = dbCSV[contador][0];
-									var segundo = dbCSV[contador + 1][0];
-									for (let i = contador + 2; i < dbCSV.length - 1; i++) {
-										if (dbCSV[i][0] == primero && dbCSV[i + 1][0] == segundo && dbCSV[i][1] == "X" && dbCSV[i + 1][1] == "X") {
+									for (let i = contador + 1; i < dbCSV.length - 1; i++) {
+										if (dbCSV[i][0] == primero && dbCSV[i][1] == "X") {
+											// COMO ES UN BUCLE EN LAS SIGUIENTES ITERACIONES NO SE COMPARA LAS COPIAS
 											posicionDeCopias.push(i);
-											posicionDeCopias.push(i + 1);
 										}
 									}
 									if (posicionDeCopias.length !== 0) {
-										posicionDeCopias.push(contador);
-										posicionDeCopias.push(contador + 1);
-										posicionDeCopias = posicionDeCopias.slice(-2).concat(posicionDeCopias.slice(0, -2));
+										// SE EJECUTA SI HUBO COPIAS
+										posicionDeCopias.push(contador); // SE AGREGA EL MISMO NUMERO, EL DE LA POSICION DE LA COPIA
+										console.log("DATOS REPETIDOS: ", posicionDeCopias);
+										posicionDeCopias = posicionDeCopias.slice(-1).concat(posicionDeCopias.slice(0, -1));
 										numeroColor = numeroColor + 1;
 										console.log("COPIAS EN LAS POSICIONES: ", posicionDeCopias);
-									}
-									posicionDeCopias.forEach(indice => {
-										if (dbCSV[indice] && dbCSV[indice][1] === 'X') {
-											dbCSV[indice][1] = numeroColor;
+										posicionDeCopias.forEach(indice => {
+											// console.log("INDICE: ", indice)
+											if (dbCSV[indice] && dbCSV[indice][1] === 'X') {// EVITA SOBREESCRIBIR SOBRE LOS DATOS QUE YA EXISTEN
+												dbCSV[indice][1] = numeroColor;
+											}
+										});
+										//INICIO CAMBIOS
+										if (contadorDos == 1 && posicionDePrimeraCopia.length == posicionDeCopias.length) {
+										} else if (contadorDos == 0) {
+											posicionDePrimeraCopia = posicionDeCopias;
+										} else {
+
 										}
-									});
+										contadorDos = contadorDos + 1;
+										// FIN CAMBIOS
+									}
+									// posicionDeCopias.forEach(indice => {
+									// 	console.log("INDICE: ", indice)
+									// 	if (dbCSV[indice] && dbCSV[indice][1] === 'X') {// EVITA SOBREESCRIBIR SOBRE LOS DATOS QUE YA EXISTEN
+									// 		dbCSV[indice][1] = numeroColor;
+									// 	}
+									// });
 									posicionDeCopias = [];
 								}
-								console.log("RESULTADO: ", dbCSV)
+								console.log("RESULTADO: ", dbCSV);
+
+								//SERIES DE DOS
+								// let dbCSV = numeros.map(value => [value, 'X']);
+								// var posicionDeCopias = [];
+								// var numeroColor = -1;
+								// for (let contador = 0; contador < dbCSV.length - 1; contador++) {
+								// 	var primero = dbCSV[contador][0];
+								// 	var segundo = dbCSV[contador + 1][0];
+								// 	for (let i = contador + 2; i < dbCSV.length - 1; i++) {
+								// 		if (dbCSV[i][0] == primero && dbCSV[i + 1][0] == segundo && dbCSV[i][1] == "X" && dbCSV[i + 1][1] == "X") {
+								// 			posicionDeCopias.push(i);
+								// 			posicionDeCopias.push(i + 1);
+								// 		}
+								// 	}
+								// 	if (posicionDeCopias.length !== 0) {
+								// 		posicionDeCopias.push(contador);
+								// 		posicionDeCopias.push(contador + 1);
+								// 		posicionDeCopias = posicionDeCopias.slice(-2).concat(posicionDeCopias.slice(0, -2));
+								// 		numeroColor = numeroColor + 1;
+								// 		console.log("COPIAS EN LAS POSICIONES: ", posicionDeCopias);
+								// 	}
+								// 	posicionDeCopias.forEach(indice => {
+								// 		if (dbCSV[indice] && dbCSV[indice][1] === 'X') {
+								// 			dbCSV[indice][1] = numeroColor;
+								// 		}
+								// 	});
+								// 	posicionDeCopias = [];
+								// }
+								// console.log("RESULTADO: ", dbCSV)
 
 								//SERIES DE TRES
 								// let dbCSV = numeros.map(value => [value, 'X']);
