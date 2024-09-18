@@ -42,11 +42,7 @@ app
 								var posicionDePrimeraCopia = [];
 								var contadorDos = 0;
 								var numeroColor = -1;
-								for (
-									let contador = 0;
-									contador < dbCSV.length - 1;
-									contador++
-								) {
+								for (let contador = 0; contador < dbCSV.length - 1; contador++) {
 									var primero = dbCSV[contador][0];
 									for (let i = contador + 1; i < dbCSV.length - 1; i++) {
 										if (dbCSV[i][0] == primero && dbCSV[i][1] == "X") {
@@ -68,21 +64,20 @@ app
 											}
 										});
 										//INICIO CAMBIOS
-										if (contadorDos == 1 && posicionDePrimeraCopia.length == posicionDeCopias.length) {
-										} else if (contadorDos == 0) {
-											posicionDePrimeraCopia = posicionDeCopias;
-										} else {
-
-										}
-										contadorDos = contadorDos + 1;
+										// if (contadorDos > 0 && posicionDePrimeraCopia.length == posicionDeCopias.length) {
+										// 	// numeroColor = numeroColor + 1;
+										// } else if (contadorDos > 0 && (posicionDePrimeraCopia.length != posicionDeCopias.length)) {
+										// 	numeroColor = numeroColor - 1;
+										// 	posicionDeCopias.forEach(index => {
+										// 		dbCSV[index][1] = "X";
+										// 	});
+										// } else if (contadorDos == 0) {
+										// 	// posicionDePrimeraCopia = posicionDeCopias;
+										// }
+										// contadorDos = contadorDos + 1;
+										// posicionDePrimeraCopia = posicionDeCopias;
 										// FIN CAMBIOS
 									}
-									// posicionDeCopias.forEach(indice => {
-									// 	console.log("INDICE: ", indice)
-									// 	if (dbCSV[indice] && dbCSV[indice][1] === 'X') {// EVITA SOBREESCRIBIR SOBRE LOS DATOS QUE YA EXISTEN
-									// 		dbCSV[indice][1] = numeroColor;
-									// 	}
-									// });
 									posicionDeCopias = [];
 								}
 								console.log("RESULTADO: ", dbCSV);
@@ -217,12 +212,13 @@ app
 				});
 			}
 			$scope.getClass = function (numero) {
-				// var primerNumero = $scope.primerNumero;
-				// if (numero == primerNumero) {
-				//     return 'es';
-				// } else {
-				//     return 'noes';
-				// }
+
+				if (numero >= 0 && numero <= 99) {
+					return `color-${numero}`;
+				} else {
+					return "otro";
+				}
+
 				var numeroColor = "ninguno";
 				switch (numero) {
 					case 0:

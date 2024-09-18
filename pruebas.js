@@ -361,3 +361,5 @@ $scope.mapa_certificA = function (lat, long) {
         });
     }, 150);
 };
+
+
