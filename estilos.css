@@ -23,118 +23,170 @@
         padding: 4px;
         text-align: center;
     }
-
-    .cero {
-        background-color: red;
-    }
-
-    .uno {
-        background-color: orangered;
-    }
-
-    .dos {
-        background-color: hotpink;
-    }
-
-    .tres {
-        background-color: coral;
-    }
-
-    .cuatro {
-        background-color: darkorange;
-    }
-
-    .cinco {
-        background-color: lightpink;
-    }
-
-    .seis {
-        background-color: lightpink;
-    }
-
-    .siete {
-        background-color: orange;
-    }
-
-    .ocho {
-        background-color: yellow;
-    }
-
-    .nueve {
-        background-color: moccasin;
-    }
-
-    .diez {
-        background-color: moccasin;
-    }
-
-    .once {
-        background-color: papayawhip;
-    }
-
-    .doce {
-        background-color: lawngreen;
-    }
-
-    .trece {
-        background-color: lightgreen;
-    }
-
-    .catorce {
-        background-color: mediumspringgreen;
-    }
-
-    .quince {
-        background-color: forestgreen;
-    }
-
-    .dieciseis {
-        background-color: steelblue;
-    }
-
-    .diecisiete {
-        background-color: lightskyblue;
-    }
-
-    .dieciocho {
-        background-color: cornflowerblue;
-    }
-
-    .diecinueve {
-        background-color: midnightblue;
-    }
-
-    .veinte {
-        background-color: navy;
-    }
-
-    .veintiuno {
-        background-color: deeppink;
-    }
-
-    .veintidos {
-        background-color: purple;
-    }
-
-    .veintitres {
-        background-color: mediumvioletred;
-    }
-
-    .veinticuatro {
-        background-color: brown;
-    }
-
-    .veinticinco {
-        background-color: peru;
-    }
-
-    .veintiseis {
-        background-color: grey;
-    }
-
-    .otro {
-        background-color: snow;
-    }
+    .color-0 { background-color: #ff0000; } /* Red */
+    .color-1 { background-color: #ff1a00; }
+    .color-2 { background-color: #ff3300; }
+    .color-3 { background-color: #ff4d00; }
+    .color-4 { background-color: #ff6600; }
+    .color-5 { background-color: #ff8000; }
+    .color-6 { background-color: #ff9900; }
+    .color-7 { background-color: #ffb300; }
+    .color-8 { background-color: #ffcc00; }
+    .color-9 { background-color: #ffe600; }
+    .color-10 { background-color: #ffff00; } /* Yellow */
+    .color-11 { background-color: #e6ff00; }
+    .color-12 { background-color: #ccff00; }
+    .color-13 { background-color: #b3ff00; }
+    .color-14 { background-color: #99ff00; }
+    .color-15 { background-color: #80ff00; }
+    .color-16 { background-color: #66ff00; }
+    .color-17 { background-color: #4dff00; }
+    .color-18 { background-color: #33ff00; }
+    .color-19 { background-color: #1aff00; }
+    .color-20 { background-color: #00ff00; } /* Green */
+    .color-21 { background-color: #00ff1a; }
+    .color-22 { background-color: #00ff33; }
+    .color-23 { background-color: #00ff4d; }
+    .color-24 { background-color: #00ff66; }
+    .color-25 { background-color: #00ff80; }
+    .color-26 { background-color: #00ff99; }
+    .color-27 { background-color: #00ffb3; }
+    .color-28 { background-color: #00ffcc; }
+    .color-29 { background-color: #00ffe6; }
+    .color-30 { background-color: #00ffff; } /* Cyan */
+    .color-31 { background-color: #00e6ff; }
+    .color-32 { background-color: #00ccff; }
+    .color-33 { background-color: #00b3ff; }
+    .color-34 { background-color: #0099ff; }
+    .color-35 { background-color: #0080ff; }
+    .color-36 { background-color: #0066ff; }
+    .color-37 { background-color: #004dff; }
+    .color-38 { background-color: #0033ff; }
+    .color-39 { background-color: #001aff; }
+    .color-40 { background-color: #0000ff; } /* Blue */
+    .color-41 { background-color: #1a00ff; }
+    .color-42 { background-color: #3300ff; }
+    .color-43 { background-color: #4d00ff; }
+    .color-44 { background-color: #6600ff; }
+    .color-45 { background-color: #8000ff; }
+    .color-46 { background-color: #9900ff; }
+    .color-47 { background-color: #b300ff; }
+    .color-48 { background-color: #cc00ff; }
+    .color-49 { background-color: #e600ff; }
+    .color-50 { background-color: #ff00ff; } /* Violet */
+    .color-51 { background-color: #ff00e6; }
+    .color-52 { background-color: #ff00cc; }
+    .color-53 { background-color: #ff00b3; }
+    .color-54 { background-color: #ff0099; }
+    .color-55 { background-color: #ff0080; }
+    .color-56 { background-color: #ff0066; }
+    .color-57 { background-color: #ff004d; }
+    .color-58 { background-color: #ff0033; }
+    .color-59 { background-color: #ff001a; }
+    .color-60 { background-color: #ff0000; } /* Red (reset transition) */
+    
+    /* .color-0 { background-color: #ff0000; } /* Red */
+    /* .color-1 { background-color: #ff0d00; }
+    .color-2 { background-color: #ff1a00; }
+    .color-3 { background-color: #ff2600; }
+    .color-4 { background-color: #ff3300; }
+    .color-5 { background-color: #ff4000; }
+    .color-6 { background-color: #ff4d00; }
+    .color-7 { background-color: #ff5900; }
+    .color-8 { background-color: #ff6600; }
+    .color-9 { background-color: #ff7300; }
+    .color-10 { background-color: #ff8000; }
+    .color-11 { background-color: #ff8c00; }
+    .color-12 { background-color: #ff9900; }
+    .color-13 { background-color: #ffa600; }
+    .color-14 { background-color: #ffb300; }
+    .color-15 { background-color: #ffbf00; }
+    .color-16 { background-color: #ffcc00; }
+    .color-17 { background-color: #ffd900; }
+    .color-18 { background-color: #ffe600; }
+    .color-19 { background-color: #fff200; }
+    .color-20 { background-color: #ffff00; } 
+    .color-21 { background-color: #f2ff00; }
+    .color-22 { background-color: #e6ff00; }
+    .color-23 { background-color: #d9ff00; }
+    .color-24 { background-color: #ccff00; }
+    .color-25 { background-color: #bfff00; }
+    .color-26 { background-color: #b3ff00; }
+    .color-27 { background-color: #a6ff00; }
+    .color-28 { background-color: #99ff00; }
+    .color-29 { background-color: #8cff00; }
+    .color-30 { background-color: #80ff00; }
+    .color-31 { background-color: #73ff00; }
+    .color-32 { background-color: #66ff00; }
+    .color-33 { background-color: #59ff00; }
+    .color-34 { background-color: #4dff00; }
+    .color-35 { background-color: #40ff00; }
+    .color-36 { background-color: #33ff00; }
+    .color-37 { background-color: #26ff00; }
+    .color-38 { background-color: #19ff00; }
+    .color-39 { background-color: #0dff00; }
+    .color-40 { background-color: #00ff00; }
+    .color-41 { background-color: #00ff0d; }
+    .color-42 { background-color: #00ff19; }
+    .color-43 { background-color: #00ff26; }
+    .color-44 { background-color: #00ff33; }
+    .color-45 { background-color: #00ff40; }
+    .color-46 { background-color: #00ff4d; }
+    .color-47 { background-color: #00ff59; }
+    .color-48 { background-color: #00ff66; }
+    .color-49 { background-color: #00ff73; }
+    .color-50 { background-color: #00ff80; }
+    .color-51 { background-color: #00ff8c; }
+    .color-52 { background-color: #00ff99; }
+    .color-53 { background-color: #00ffa6; }
+    .color-54 { background-color: #00ffb3; }
+    .color-55 { background-color: #00ffbf; }
+    .color-56 { background-color: #00ffcc; }
+    .color-57 { background-color: #00ffd9; }
+    .color-58 { background-color: #00ffe6; }
+    .color-59 { background-color: #00fff2; }
+    .color-60 { background-color: #00ffff; }
+    .color-61 { background-color: #00f2ff; }
+    .color-62 { background-color: #00e6ff; }
+    .color-63 { background-color: #00d9ff; }
+    .color-64 { background-color: #00ccff; }
+    .color-65 { background-color: #00bfff; }
+    .color-66 { background-color: #00b3ff; }
+    .color-67 { background-color: #00a6ff; }
+    .color-68 { background-color: #0099ff; }
+    .color-69 { background-color: #008cff; }
+    .color-70 { background-color: #0080ff; }
+    .color-71 { background-color: #0073ff; }
+    .color-72 { background-color: #0066ff; }
+    .color-73 { background-color: #0059ff; }
+    .color-74 { background-color: #004dff; }
+    .color-75 { background-color: #0040ff; }
+    .color-76 { background-color: #0033ff; }
+    .color-77 { background-color: #0026ff; }
+    .color-78 { background-color: #0019ff; }
+    .color-79 { background-color: #000dff; }
+    .color-80 { background-color: #0000ff; }
+    .color-81 { background-color: #0d00ff; }
+    .color-82 { background-color: #1900ff; }
+    .color-83 { background-color: #2600ff; }
+    .color-84 { background-color: #3300ff; }
+    .color-85 { background-color: #4000ff; }
+    .color-86 { background-color: #4d00ff; }
+    .color-87 { background-color: #5900ff; }
+    .color-88 { background-color: #6600ff; }
+    .color-89 { background-color: #7300ff; }
+    .color-90 { background-color: #8000ff; }
+    .color-91 { background-color: #8c00ff; }
+    .color-92 { background-color: #9900ff; }
+    .color-93 { background-color: #a600ff; }
+    /* .color-94 { background-color: #b300ff; }
+    .color-95 { background-color: #bf00ff; }
+    .color-96 { background-color: #cc00ff; }
+    .color-97 { background-color: #d900ff; }
+    .color-98 { background-color: #e600ff; }
+    .color-99 { background-color: #f200ff; } */
+    .otro { background-color: snow; }
+    
 
     .contenedor {
         margin: 20 px;
@@ -159,4 +211,12 @@
         /* Fondo del contenedor */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         /* Sombra para efecto visual */
+    }
+
+    .even-class {
+        background-color: lightblue; /* Ejemplo para índices pares */
+    }
+
+    .odd-class {
+        background-color: lightcoral; /* Ejemplo para índices impares */
     }
