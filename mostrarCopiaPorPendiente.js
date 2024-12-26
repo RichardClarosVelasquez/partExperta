@@ -34,8 +34,13 @@ app
               for (let i = 1; i < numeros.length; i++) {
                 pendiente.push(numeros[i] - numeros[i - 1]); // Calcula la diferencia y la agrega al vector B
               }
-              console.log("Pendientes: ", pendiente);
-              numeros = pendiente;
+
+              //   const arrayConPendientes = numeros.map((item, index) => {
+              //     return [...item, pendiente[index]]; // Agrega el valor correspondiente de C al subarray
+              //   });
+
+              //   console.log("Con pendientes: ",arrayConPendientes);
+
               $scope.$apply(function () {
                 //SERIES DE UNO
                 // let dbCSV = numeros.map((value) => [value, "X"]);
@@ -160,6 +165,11 @@ app
                 // }
                 // console.log("RESULTADO: ", dbCSV)
 
+                var arrayConPendientes = dbCSV.map((item, index) => {
+                  return [...item, pendiente[index]]; // Agrega el valor correspondiente de C al subarray
+                });
+                console.log("Con pendientes: ", arrayConPendientes);
+
                 $scope.matriz2 = []; // Muestra la matriz en una tabla, por el ordende las columnas
                 for (let i = 0; i < 20; i++) {
                   $scope.matriz2[i] = [];
@@ -169,8 +179,10 @@ app
                   let col = Math.floor(i / 20);
                   $scope.matriz2[row][col] = dbCSV[i];
                 }
+                
+                // var arrayFinal = $scope.matriz2
+                // console.log("DATOS FINALES: ", arrayFinal.length);
 
-                console.log("DATOS FINALES: ", $scope.matriz2);
               });
             })
             .catch((error) => {
